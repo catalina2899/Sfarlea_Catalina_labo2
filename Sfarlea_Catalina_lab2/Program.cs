@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Sfarlea_Catalina_lab2.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<Sfarlea_Catalina_lab2Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Sfarlea_Catalina_lab2Context") ?? throw new InvalidOperationException("Connection string 'Sfarlea_Catalina_lab2Context' not found.")));
 
 var app = builder.Build();
 
