@@ -1,4 +1,6 @@
-﻿namespace Sfarlea_Catalina_lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Sfarlea_Catalina_lab2.Models
 {
     public class Author
     {
@@ -8,6 +10,15 @@
 
         public string LastName { get; set; }
 
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+        public ICollection<Book>? Books { get; set; }
 
     }
 }
