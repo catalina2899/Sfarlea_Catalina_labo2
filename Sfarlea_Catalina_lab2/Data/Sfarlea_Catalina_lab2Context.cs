@@ -20,5 +20,7 @@ namespace Sfarlea_Catalina_lab2.Data
         public DbSet<Sfarlea_Catalina_lab2.Models.Author> Author { get; set; } = default!;
 
         public DbSet<Sfarlea_Catalina_lab2.Models.Category> Category { get; set; } = default!;
+        public DbSet<Sfarlea_Catalina_lab2.Models.Member> Member { get; set; } = default!;
+        public DbSet<Sfarlea_Catalina_lab2.Models.Borrowing> Borrowing { get; set; } = default!;
     }
 }
